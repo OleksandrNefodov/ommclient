@@ -1,0 +1,38 @@
+.menu{
+    background-color:#555555;
+    text-align: center;
+    width: 5vw;
+    min-width: 150px;
+    height: inherit;
+    flex:1.5;
+    min-width: inherit;
+
+    ul{
+        li{
+            padding-top:2vh;
+            padding-bottom:2vh;
+            border-bottom: 1px solid black;            
+        }
+
+        li:hover{
+            i {
+                color: rgb(192, 192, 192);       
+            }
+          
+            background-color: rgb(95, 94, 93);
+            box-shadow: 10px 5px 5px black;
+            transition-timing-function: ease-in;
+            transition: 0.4s;
+        }
+
+        li:active{
+            transition: none;
+            -webkit-box-shadow: inset 0px 0px 5px black;
+            -moz-box-shadow: inset 0px 0px 5px black;
+            box-shadow: inset 0px 0px 5px black;      
+        }
+    }
+}
+.menu:hover{
+    background-color:rgb(75, 74, 74);  
+}

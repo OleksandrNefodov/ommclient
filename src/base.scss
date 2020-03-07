@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+}
+
+body {
+  // font-family: "DINProMedium", Arial, sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  // min-height: 1500px;
+  // background-color: transparent !important;
+  // background-size: cover;
+  
+}
+
+html, body, #root {
+  background-color: rgb(192, 192, 192);
+  height: 100vh;
+  min-height: 648px;
+  min-width: 480px; 
+  width: auto;
+  // width: auto;
+  // min-width: 100%;
+  // background-image: url(../src/assets/newspaper.jpg);
+
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(192, 192, 192);
+  -webkit-box-shadow: inset 0px 0px 5px black;
+  -moz-box-shadow: inset 0px 0px 5px black;
+  box-shadow: inset 0px 0px 5px black;   
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  -webkit-box-shadow: inset 0px 0px 5px black;
+  -moz-box-shadow: inset 0px 0px 5px black;
+  box-shadow: inset 0px 0px 5px black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}

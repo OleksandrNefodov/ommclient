@@ -1,0 +1,42 @@
+.layout {         
+    height: 100vh;
+    min-height: 748px;
+    min-width: inherit;
+    
+    .desktop{
+        display: flex;
+        height: 87vh;
+        width: 100%;
+    }
+
+    .mobile{        
+        min-width: 648px;
+        overflow: hidden;
+
+        div:first-child{
+            height: 10%;
+            width: 100vw;
+            min-height: 70px;
+            
+            ul{
+                justify-content: center;
+                height: 100%;
+                display: flex;     
+                padding-right: 20px;  
+    
+            }
+            
+            ul > li{
+                padding-right: 10px;
+                width: 10%;
+                padding-left: 10px;
+                min-width: inherit;
+                
+            }
+        }
+
+        div:last-child{
+            height: 87vh;
+        }
+    }
+}

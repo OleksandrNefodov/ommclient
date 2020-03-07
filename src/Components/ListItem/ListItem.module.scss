@@ -1,0 +1,28 @@
+.item {    
+    height: 90px;
+    margin-bottom: 5px;
+    background-color: rgba(247, 247, 222, 0.144);
+    justify-content: center;
+
+    i {
+        float: right;
+        padding-right: 5px;
+        color:rgb(87, 86, 86);   
+    }
+    i:hover{
+        color:rgb(26, 25, 25);       
+        transition: none;
+    }
+    i:active{
+        color:rgb(75, 3, 3);
+        transition: none; 
+
+        li:active{
+            background-color: greenyellow;
+        }
+      }
+
+    span {
+        padding: 5px;
+    }
+}

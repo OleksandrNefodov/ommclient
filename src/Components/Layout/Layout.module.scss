@@ -1,24 +1,32 @@
 .layout {         
     height: 100vh;
-    min-height: 748px;
+    min-height: 500px;
     min-width: inherit;
+    position: relative;
+    width: 100vw;
     
     .desktop{
         display: flex;
         height: 87vh;
         width: 100%;
+
+        div:last-child{
+            height: 87vh;
+        }
     }
 
-    .mobile{        
-        min-width: 648px;
+    .mobile{
+        height: 87vh;
         overflow: hidden;
+        width: inherit;
+      
 
         div:first-child{
-            height: 10%;
+            height: 10vh;
             width: 100vw;
             min-height: 70px;
             
-            ul{
+            ul{                
                 justify-content: center;
                 height: 100%;
                 display: flex;     
@@ -31,12 +39,12 @@
                 width: 10%;
                 padding-left: 10px;
                 min-width: inherit;
-                
+                border: none;                
             }
         }
 
         div:last-child{
-            height: 87vh;
+            height: 74vh;
         }
     }
 }

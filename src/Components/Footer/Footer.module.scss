@@ -1,12 +1,12 @@
 .footer {
     height: 6vh;
-    min-height: 50px;
-
+    min-height: 30px;
     background-color: #212123;
     color: white;
-
+    position: absolute;
+    bottom: 0;
     text-align: center;
-
+    width: 100vw;
     box-shadow: 10 10 30px rgba(0,0,0,0.6);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);

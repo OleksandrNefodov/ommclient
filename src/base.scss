@@ -49,5 +49,12 @@ html, body, #root {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-background: #555; 
+  background: #555; 
+}
+
+/* Thin Scrollbar */
+:root{
+  scrollbar-color: rgb(210,210,210)#888 !important;
+  scrollbar-width: thin !important;
+  
 }

@@ -9,8 +9,43 @@ export interface IListItem {
     name: string,
 }
 
-export default class List extends React.PureComponent {
-    items: IListItem[] = [
+export interface IItemState {
+    items: IListItem[]
+}
+
+export default class List extends React.PureComponent<{}, IItemState> {
+
+    constructor(props: Readonly<{}>) {
+        super(props);
+
+        this.state = {
+            items: this.listItems
+        }
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(event: { target: { value: string; }; }) {
+        const userInput = event.target.value.toLowerCase();
+
+        let filteredItems = this.listItems.filter((item) => {
+            if (userInput === "" || userInput === null || userInput === undefined) {
+                this.setState({ items: this.listItems });
+            }
+
+            if (item.businessId.startsWith(userInput)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        });
+
+        this.setState({ items: filteredItems });
+
+    }
+
+    listItems: IListItem[] = [
         { businessId: '123', name: 'Organization 1' },
         { businessId: '643', name: 'Organization 2' },
         { businessId: '143242-4', name: 'Organization 3' },
@@ -45,7 +80,7 @@ export default class List extends React.PureComponent {
                 <div className={styles.listContainer}>
                     <div className={styles.search}>
                         <Icon id="" name="search" size={IconSize.X2} />
-                        <input type="text" className={styles.search} placeholder="Search..." />
+                        <input type="text" className={styles.search} placeholder="Search business id..." onChange={this.onChange} />
                     </div>
                     {/* <input className={styles.search} type="text" placeholder="Search.." id="myInput" /> */}
 
@@ -53,7 +88,7 @@ export default class List extends React.PureComponent {
                         {
                             <ul className={styles.scrollable}>
                                 {
-                                    this.items.map((item, i) =>
+                                    this.state.items.map((item, i) =>
 
                                         <ListItem key={i} businessId={item.businessId} name={item.name} />
 

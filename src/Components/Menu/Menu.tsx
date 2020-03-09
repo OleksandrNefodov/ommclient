@@ -1,16 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import Icon, { IconSize } from '../Icon/Icon';
+import { Link } from 'react-router-dom';
 
 import styles from "./Menu.module.scss";
 
-export enum Action {
-    Info,
-    Add,
-    Settings,
-    BankConnection,
-    Statistics,
-    SendFiles
-}
 export interface IMenuProps {
     items: MenuItem[],
 }
@@ -18,7 +11,7 @@ export interface IMenuProps {
 export interface MenuItem {
     icon: string,
     size: IconSize,
-    action: Action
+    route: string,
 }
 
 export class Menu extends React.PureComponent<IMenuProps> {
@@ -28,11 +21,17 @@ export class Menu extends React.PureComponent<IMenuProps> {
                 <ul>
                     {
                         this.props.items.map((item, i) =>
-                            <li key={i}><Icon id={i} name={item.icon} size={item.size} /></li>
+                            <li key={i}>
+                                <Link to={item.route}>
+
+                                    <Icon id={i} name={item.icon} size={item.size} />
+
+                                </Link>
+                            </li>
                         )
                     }
                 </ul>
-            </div>
+            </div >
         );
     }
 }

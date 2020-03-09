@@ -2,14 +2,22 @@
     background-color:#555555;
     text-align: center;
     width: 5vw;
-    min-width: 150px;
     height: inherit;
     flex:1.5;
-    min-width: inherit;
 
     cursor: pointer;
     
     ul{
+        a{
+            text-decoration: none;
+            color: #212123;;
+            display: inline-block;     
+            position: relative;    
+            z-index: 1;     
+            padding: 2em;     
+            margin: -2em; 
+        }
+
         li{
             padding-top:2vh;
             padding-bottom:2vh;

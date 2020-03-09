@@ -15,7 +15,6 @@ export interface IBaseComponent {
 
 export default class BaseComponent<TProps = {}, TState = {}> extends React.PureComponent<TProps, TState> implements IBaseComponent {
     isMobile(): boolean {
-        // return window.innerWidth < (window.screen.width * 0.7);
         return window.innerWidth < 1024;
     }
 

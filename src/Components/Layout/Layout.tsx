@@ -1,8 +1,9 @@
 import React from "react";
+
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import BaseComponent from "../../Models/BaseComponent";
-import { Menu, Action, MenuItem } from "../Menu/Menu";
+import { Menu, MenuItem } from "../Menu/Menu";
 import List from "../List/List";
 import Content from "../Content/Content";
 import { IconSize } from "../Icon/Icon";
@@ -30,7 +31,6 @@ export default class Layout extends BaseComponent<{}, ILayoutState> {
     }
 
     getWindowSize = () => {
-        console.log(window.innerWidth);
         return this.isMobile() ? styles.mobile : styles.desktop
     }
 
@@ -44,12 +44,12 @@ export default class Layout extends BaseComponent<{}, ILayoutState> {
 
 
     items: MenuItem[] = [
-        { icon: "info", size: IconSize.X3, action: Action.Info },
-        { icon: "plus-circle", size: IconSize.X3, action: Action.Add },
-        { icon: "cogs", size: IconSize.X3, action: Action.Settings },
-        { icon: "bar-chart", size: IconSize.X3, action: Action.Statistics },
-        { icon: "unlock", size: IconSize.X3, action: Action.BankConnection },
-        { icon: "paper-plane", size: IconSize.X3, action: Action.SendFiles },
+        { icon: "info", size: IconSize.X3, route: '/info' },
+        { icon: "plus-circle", size: IconSize.X3, route: '/add' },
+        { icon: "bar-chart", size: IconSize.X3, route: '/statistics' },
+        { icon: "paper-plane", size: IconSize.X3, route: '/send' },
+        { icon: "unlock", size: IconSize.X3, route: '/1' },
+        { icon: "cogs", size: IconSize.X3, route: '/2' },
     ];
 
 

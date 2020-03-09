@@ -43,11 +43,11 @@ export interface IIconProps {
     toggleModal?: boolean;
     dismissModal?: boolean;
     customStyle?: React.CSSProperties;
-    onClick?(): Promise<void>;
+    onClick?(): void;
 }
 
-export default class Icon extends React.PureComponent<IIconProps> {
 
+export default class Icon extends React.PureComponent<IIconProps> {
     private static add(lowerClassName: string, className: string, style: string, asPrefix: boolean = false): string {
         const includes: boolean = (asPrefix)
             ? lowerClassName.startsWith(style + " ")
@@ -168,7 +168,7 @@ export default class Icon extends React.PureComponent<IIconProps> {
                 className={this.getClassName()}
                 title={this.props.tooltip}
                 data-target={`#${this.dataTarget}`}
-                onClick={async (e: React.MouseEvent) => await this.onClickAsync(e)} />
+                onClick={this.props.onClick} />
         );
     }
 }

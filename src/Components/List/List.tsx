@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import styles from './List.module.scss';
 import ListItem from '../ListItem/ListItem';
@@ -29,16 +29,7 @@ export default class List extends React.PureComponent<{}, IItemState> {
         const userInput = event.target.value.toLowerCase();
 
         let filteredItems = this.listItems.filter((item) => {
-            if (userInput === "" || userInput === null || userInput === undefined) {
-                this.setState({ items: this.listItems });
-            }
-
-            if (item.businessId.startsWith(userInput)) {
-                return true;
-            }
-            else {
-                return false;
-            }
+            return item.businessId.startsWith(userInput) || item.name.toLowerCase().startsWith(userInput) ? true : false;
         });
 
         this.setState({ items: filteredItems });
@@ -46,7 +37,7 @@ export default class List extends React.PureComponent<{}, IItemState> {
     }
 
     listItems: IListItem[] = [
-        { businessId: '123', name: 'Organization 1' },
+        { businessId: '123', name: 'ganization 1' },
         { businessId: '643', name: 'Organization 2' },
         { businessId: '143242-4', name: 'Organization 3' },
         { businessId: '361111-3', name: 'Organization 4' },
@@ -66,7 +57,7 @@ export default class List extends React.PureComponent<{}, IItemState> {
         { businessId: '342436-3', name: 'Organization 6' },
         { businessId: '123', name: 'Organization 1' },
         { businessId: '643', name: 'Organization 2' },
-        { businessId: '143242-4', name: 'Organization 3' },
+        { businessId: '143242-4', name: 'aleks 3' },
         { businessId: '361111-3', name: 'Organization 4' },
         { businessId: '346433-3', name: 'Organization 5' },
         { businessId: '342436-3', name: 'Organization 6' },
@@ -74,35 +65,30 @@ export default class List extends React.PureComponent<{}, IItemState> {
     render() {
         return (
 
-            <Fragment>
-
-
-                <div className={styles.listContainer}>
-                    <div className={styles.search}>
-                        <Icon id="" name="search" size={IconSize.X2} />
-                        <input type="text" className={styles.search} placeholder="Search business id..." onChange={this.onChange} />
-                    </div>
-                    {/* <input className={styles.search} type="text" placeholder="Search.." id="myInput" /> */}
-
-                    <div className={styles.list}>
-                        {
-                            <ul className={styles.scrollable}>
-                                {
-                                    this.state.items.map((item, i) =>
-
-                                        <ListItem key={i} businessId={item.businessId} name={item.name} />
-
-                                    )
-                                }
-
-                            </ul>
-
-                        }
-                    </div >
-
+            <div className={styles.listContainer}>
+                <div className={styles.search}>
+                    <Icon id="" name="search" size={IconSize.X2} />
+                    <input type="text" className={styles.search} placeholder="Search..." onChange={this.onChange} />
                 </div>
+                {/* <input className={styles.search} type="text" placeholder="Search.." id="myInput" /> */}
 
-            </Fragment>
+                <div className={styles.list}>
+                    {
+                        <ul className={styles.scrollable}>
+                            {
+                                this.state.items.map((item, i) =>
+
+                                    <ListItem key={i} businessId={item.businessId} name={item.name} />
+
+                                )
+                            }
+
+                        </ul>
+
+                    }
+                </div >
+
+            </div>
         );
     }
 }
